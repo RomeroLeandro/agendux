@@ -1,8 +1,10 @@
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
+import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 
 export default function Home() {
   return (
-    <div className="">
+    <div >
+      <ThemeSwitcher />
       <Button>Click me</Button>
     </div>
   );
