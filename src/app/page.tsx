@@ -3,7 +3,7 @@ import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <ThemeSwitcher />
       <Button>Click me</Button>
     </div>

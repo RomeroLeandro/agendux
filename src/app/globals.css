@@ -1,2 +1,29 @@
 @import "tailwindcss";
 @tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #1e1e1e;
+  --color-bg-dark-secondary: #28282a;
+  --container-8xl: 1440px;
+
+  --color-font-primary-light: #111827;
+  --color-font-secondary-light: #374151;
+
+  --color-font-primary-dark: #f3f4f6;
+  --color-font-secondary-dark: #e5e7eb;
+
+  --color-link: #254ab6;
+  --color-green: #22C55E;
+  --color-green-transparent: #DCFCE7;
+  --color-red: #F77171;
+  --color-red-transparent: #FEE2E2;
+  --color-yellow: #F9CC15;
+  --color-yellow-transparent: #FEF9C3;
+
+
+  --color-blue-primary: #3161dd;
+  --color-blue-primary-transparent:#3161dd20 ;
+  --color-blue-secondary: #528dff;
+}
