@@ -2,6 +2,30 @@
 @tailwind utilities;
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "adineue PRO";
+  src: url("/fonts/adineue-PRO.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "adineue PRO Bold";
+  src: url("/fonts/adineue-PRO-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-bg-light: #ffffff;
   --color-bg-dark: #1e1e1e;
@@ -15,15 +39,18 @@
   --color-font-secondary-dark: #e5e7eb;
 
   --color-link: #254ab6;
-  --color-green: #22C55E;
-  --color-green-transparent: #DCFCE7;
-  --color-red: #F77171;
-  --color-red-transparent: #FEE2E2;
-  --color-yellow: #F9CC15;
-  --color-yellow-transparent: #FEF9C3;
-
+  --color-green: #22c55e;
+  --color-green-transparent: #dcfce7;
+  --color-red: #f77171;
+  --color-red-transparent: #fee2e2;
+  --color-yellow: #f9cc15;
+  --color-yellow-transparent: #fef9c3;
 
   --color-blue-primary: #3161dd;
-  --color-blue-primary-transparent:#3161dd20 ;
+  --color-blue-primary-transparent: #3161dd20;
   --color-blue-secondary: #528dff;
+
+  --font-adineue: "adineue PRO", sans-serif;
+  --font-adineue-bold: "adineue PRO Bold", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 }

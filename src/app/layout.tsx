@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Provider } from "@/app/provider"; // Asegúrate que la ruta sea correcta
 import "./globals.css";
-import { Provider } from "@/app/provider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className="bg-bg-light dark:bg-bg-dark text-font-primary-light dark:text-font-primary-dark">
+      <body className="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark transition-colors duration-300 font-poppins">
         <Provider>{children}</Provider>
       </body>
     </html>
