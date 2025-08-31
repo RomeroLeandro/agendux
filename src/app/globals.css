@@ -2,6 +2,11 @@
 @tailwind utilities;
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-poppins);
+}
+
 @font-face {
   font-family: "adineue PRO";
   src: url("/fonts/adineue-PRO.woff2") format("woff2");
