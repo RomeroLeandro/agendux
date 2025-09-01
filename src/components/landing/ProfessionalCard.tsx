@@ -37,7 +37,7 @@ export function ProfessionalCard({
       <ul className="mt-6 space-y-3">
         {features.map((feature) => (
           <li key={feature} className="flex items-center gap-3">
-            <Check className="h-5 w-5 text-green-500" />
+            <Check className="h-5 w-5 text-color-green" />
             <Typography as="span" variant="body-md">
               {feature}
             </Typography>

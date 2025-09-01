@@ -40,7 +40,7 @@ html {
   --color-font-primary-light: #111827;
   --color-font-secondary-light: #374151;
 
-  --color-font-primary-dark: #E5E7EB;
+  --color-font-primary-dark: #f3f4f6;
   --color-font-secondary-dark: #e5e7eb;
 
   --color-link: #254ab6;
@@ -54,6 +54,9 @@ html {
   --color-blue-primary: #3161dd;
   --color-blue-primary-transparent: #3161dd20;
   --color-blue-secondary: #528dff;
+
+  /* footer */
+  --color-footer: #1f2437;
 
   --font-adineue: "adineue PRO", sans-serif;
   --font-adineue-bold: "adineue PRO Bold", sans-serif;
