@@ -3,7 +3,7 @@ import { Typography } from "@/components/ui/Typography";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { AnimatedImage } from "./AnimatedImage";
-import { CircleCheckBig, CalendarIcon, MessageSquareIcon } from "lucide-react";
+import { CircleCheckBig } from "lucide-react";
 
 const features = [
   "Recordatorios automáticos por WhatsApp",
