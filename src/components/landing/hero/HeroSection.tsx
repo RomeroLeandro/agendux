@@ -11,30 +11,6 @@ const features = [
   "Agenda inteligente sincronizada",
 ];
 
-const TopMiniCard = () => {
-  return (
-    <div className="absolute -top-4 left-18 flex items-center gap-2 rounded-2xl bg-surface p-2 text-xs shadow-lg animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 ">
-      <MessageSquareIcon className="h-6 w-6 text-color-green" />
-      <div>
-        <p className="font-semibold">Mensaje enviado</p>
-        <p className="text-text-secondary">95% confirmación</p>
-      </div>
-    </div>
-  );
-};
-
-const BottomMiniCard = () => {
-  return (
-    <div className="absolute -bottom-4 -right-8 flex items-center gap-2 rounded-2xl bg-surface p-2 text-xs shadow-lg animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-300">
-      <CalendarIcon className="h-6 w-6 text-primary" />
-      <div>
-        <p className="font-semibold">Cita confirmada</p>
-        <p className="text-text-secondary">Automáticamente</p>
-      </div>
-    </div>
-  );
-};
-
 export function HeroSection() {
   return (
     <section id="inicio" className="w-full py-6">
@@ -75,8 +51,6 @@ export function HeroSection() {
           </div>
           <div className="relative flex h-full min-h-[400px] w-full items-center justify-center">
             <AnimatedImage />
-            <TopMiniCard />
-            <BottomMiniCard />
           </div>
         </div>
       </div>
