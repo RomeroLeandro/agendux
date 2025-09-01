@@ -39,24 +39,29 @@ export const Typography: React.FC<TypographyProps> = ({
   };
 
   const variantStyleMap: Record<TypographyVariant, string> = {
-    display: "text-5xl md:text-7xl leading-tight text-gray-800 dark:text-white",
+    display:
+      "text-5xl md:text-7xl leading-tight text-font-primary-light dark:text-font-primary-dark",
 
     "heading-xl":
-      "font-display font-bold text-4xl md:text-5xl text-gray-800 dark:text-white",
+      "font-display font-bold text-4xl md:text-5xl text-font-primary-light dark:text-font-primary-dark",
 
     "heading-lg":
-      "font-bold text-3xl md:text-4xl text-gray-800 dark:text-white",
+      "font-bold text-3xl md:text-4xl text-font-primary-light dark:text-font-primary-dark",
 
-    "heading-md": " font-semibold text-xl text-gray-800 dark:text-white",
+    "heading-md":
+      " font-semibold text-xl text-font-primary-light dark:text-font-primary-dark",
 
     "heading-sm":
-      " font-semibold text-base text-gray-700 dark:text-gray-300 tracking-wider uppercase",
+      " font-semibold text-base text-font-secondary-light dark:text-font-secondary-dark tracking-wider uppercase",
 
-    "body-lg": " text-lg text-gray-600 dark:text-gray-400",
+    "body-lg":
+      " text-lg text-font-secondary-light dark:text-font-secondary-dark",
 
-    "body-md": " text-base text-gray-600 dark:text-gray-400",
+    "body-md":
+      " text-base text-font-secondary-light dark:text-font-secondary-dark",
 
-    "body-sm": " text-sm text-gray-500 dark:text-gray-400",
+    "body-sm":
+      " text-sm text-font-secondary-light dark:text-font-secondary-dark",
 
     caption: " font-semibold text-sm text-blue-600 dark:text-blue-400",
     badge:

@@ -44,13 +44,13 @@ html {
   --color-font-secondary-dark: #e5e7eb;
 
   --color-link: #254ab6;
-  --color-green: #22c55e;
-  --color-green-transparent: #dcfce7;
-  --color-red: #f77171;
+  --color-color-green: #22c55e;
+  --color-color-green-transparent: #dcfce7;
+  --color-color-red: #f77171;
   --color-red-transparent: #fee2e2;
   --color-yellow: #f9cc15;
   --color-yellow-transparent: #fef9c3;
-
+  
   --color-blue-primary: #3161dd;
   --color-blue-primary-transparent: #3161dd20;
   --color-blue-secondary: #528dff;

@@ -18,7 +18,7 @@ export function MobileNav({ onLinkClick }: MobileNavProps) {
             key={link.label}
             href={link.href}
             onClick={onLinkClick}
-            className="text-xl font-semibold text-text-secondary"
+            className="text-xl font-semibold text-text-secondary text-font-secondary-light dark:text-font-secondary-dark"
           >
             {link.label}
           </Link>
