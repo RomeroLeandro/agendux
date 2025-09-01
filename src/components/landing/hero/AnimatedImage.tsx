@@ -5,7 +5,7 @@ import { Typography } from "@/components/ui/Typography";
 
 const TopMiniCard = () => {
   return (
-    <div className="z-20 absolute -top-2 -left-2 flex items-center gap-2 rounded-2xl bg-surface p-2 text-xs shadow-lg bg-bg-light dark:bg-bg-dark-secondary transition-colors duration-300">
+    <div className="z-20 absolute -top-2 -left-2 flex items-center gap-2 rounded-2xl p-2 text-xs shadow-lg bg-bg-light dark:bg-bg-dark-secondary transition-colors duration-300">
       <MessageSquareIcon className="h-6 w-6 text-color-green" />
       <div>
         <Typography
@@ -25,7 +25,7 @@ const TopMiniCard = () => {
 
 const BottomMiniCard = () => {
   return (
-    <div className="z-20 absolute -bottom-2 -right-2 flex items-center gap-2 rounded-2xl bg-surface p-2 text-xs shadow-lg bg-bg-light dark:bg-bg-dark-secondary transition-colors duration-300">
+    <div className="z-20 absolute -bottom-2 -right-2 flex items-center gap-2 rounded-2xl p-2 text-xs shadow-lg bg-bg-light dark:bg-bg-dark-secondary transition-colors duration-300">
       <CalendarIcon className="h-6 w-6 text-blue-primary" />
       <div>
         <Typography
