@@ -1,11 +1,19 @@
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/supabase/server"; // Asegúrate de que la ruta sea correcta
 import { Typography } from "@/components/ui/Typography";
 import { PricingClientComponent } from "./PricingClientComponent";
+import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
+// Esta es una función asíncrona porque "espera" (await) la respuesta de la base de datos
 export async function PricingSection() {
   const supabase = createClient();
-  // Obtenemos los planes de la base de datos, ordenados por precio
-  const { data: plans } = await supabase.from("plans").select().order("price_monthly");
+
+  // La llamada a la base de datos es la parte que usa 'await'
+  const { data: plans } = await (await supabase)
+    .from("plans")
+    .select()
+    .order("price_monthly");
 
   return (
     <section id="planes" className="py-16 md:py-24">
@@ -14,16 +22,30 @@ export async function PricingSection() {
         <Typography variant="heading-xl" as="h2" className="mt-4">
           Precios que se adaptan al tamaño de tu negocio
         </Typography>
-        <Typography variant="body-lg" className="mt-4 max-w-2xl mx-auto text-text-secondary">
-          Escoge el plan en base a la cantidad de citas que tienes al mes. Siempre puedes cambiarlo más adelante.
+        <Typography
+          variant="body-lg"
+          className="mt-4 max-w-2xl mx-auto text-text-secondary"
+        >
+          Escoge el plan en base a la cantidad de citas que tienes al mes.
+          Siempre puedes cambiarlo más adelante.
         </Typography>
 
-        {/* Renderizamos el componente de cliente pasándole los datos */}
         <div className="mt-8">
           <PricingClientComponent plans={plans ?? []} />
         </div>
-        
-        {/* Aquí iría la tarjeta de contacto para planes personalizados */}
+
+        <Card className="mt-12 mx-auto max-w-2xl text-center">
+          <Typography variant="heading-md">
+            ¿Necesitas más de 200 citas al mes?
+          </Typography>
+          <Typography variant="body-md" className="mt-2 text-text-secondary">
+            Contáctanos para un plan personalizado adaptado a las necesidades
+            específicas de tu negocio.
+          </Typography>
+          <Link href="#contacto" className="mt-6 inline-block">
+            <Button>Contactar para plan personalizado</Button>
+          </Link>
+        </Card>
       </div>
     </section>
   );
