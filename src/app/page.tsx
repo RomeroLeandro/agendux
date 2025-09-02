@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { HeroSection } from "@/components/landing/hero/HeroSection";
-import { ForWhomSection } from "@/components/landing/ForWhomSection";
+import { ForWhomSection } from "@/components/landing/for-whom/ForWhomSection";
 import { Footer } from "@/components/layout/Footer";
 import { HowItWorksSection } from "@/components/landing/how-it-works/HowItWorksSection";
 import { FeaturesSection } from "@/components/landing/feature/FeaturesSection";

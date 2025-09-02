@@ -10,14 +10,15 @@ export function ForWhomSection() {
       <div className="container mx-auto px-4 text-center">
         <Typography variant="badge">¿PARA QUIÉN ES?</Typography>
 
-        <Typography variant="heading-lg" as="h2" className="mt-4 font-adineue-bold">
+        <Typography
+          variant="heading-lg"
+          as="h2"
+          className="mt-4 font-adineue-bold"
+        >
           Ideal para profesionales que dependen de citas
         </Typography>
 
-        <Typography
-          variant="body-lg"
-          className="mt-4 max-w-2xl mx-auto"
-        >
+        <Typography variant="body-lg" className="mt-4 max-w-2xl mx-auto">
           Simplifica la gestión de citas y ahorra horas automatizando procesos
           por WhatsApp.
         </Typography>
