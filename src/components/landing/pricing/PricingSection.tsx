@@ -19,12 +19,12 @@ export async function PricingSection() {
     <section id="planes" className="py-16 md:py-24">
       <div className="container mx-auto px-4 text-center">
         <Typography variant="badge">PRECIOS</Typography>
-        <Typography variant="heading-xl" as="h2" className="mt-4">
+        <Typography variant="heading-lg" as="h2" className="mt-4 font-adineue-bold">
           Precios que se adaptan al tamaño de tu negocio
         </Typography>
         <Typography
           variant="body-lg"
-          className="mt-4 max-w-2xl mx-auto text-text-secondary"
+          className="mt-4 max-w-2xl mx-auto"
         >
           Escoge el plan en base a la cantidad de citas que tienes al mes.
           Siempre puedes cambiarlo más adelante.
@@ -38,7 +38,7 @@ export async function PricingSection() {
           <Typography variant="heading-md">
             ¿Necesitas más de 200 citas al mes?
           </Typography>
-          <Typography variant="body-md" className="mt-2 text-text-secondary">
+          <Typography variant="body-md" className="mt-2 ">
             Contáctanos para un plan personalizado adaptado a las necesidades
             específicas de tu negocio.
           </Typography>
