@@ -7,6 +7,42 @@ html {
   font-family: var(--font-poppins);
 }
 
+.phone-input-container .PhoneInput {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem; /* rounded-xl */
+}
+
+/* Estilo para el campo de texto del número */
+.phone-input-container .PhoneInputInput {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem; /* rounded-xl */
+  border: none;
+  background-color: transparent;
+  padding: 1rem; /* p-4 */
+  color: #111827;
+}
+
+/* Estilo para el estado 'focus' del campo de texto */
+.phone-input-container .PhoneInputInput:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: #111827;
+}
+
+/* Estilo para la sección del país (bandera y código) */
+.phone-input-container .PhoneInputCountry {
+  padding: 1rem; /* p-4 */
+}
+
 @font-face {
   font-family: "adineue PRO";
   src: url("/fonts/adineue-PRO.woff2") format("woff2");
