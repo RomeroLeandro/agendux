@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HowItWorksSection } from "@/components/landing/how-it-works/HowItWorksSection";
 import { FeaturesSection } from "@/components/landing/feature/FeaturesSection";
 import { BenefitsSection } from "@/components/landing/benefits/BenefitsSection";
+import { AutoSchedulingSection } from "@/components/landing/auto-scheduling/AutoShedulingSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <HowItWorksSection />
         <FeaturesSection />
         <BenefitsSection />
+        <AutoSchedulingSection />
       </main>
       <Footer />
     </>

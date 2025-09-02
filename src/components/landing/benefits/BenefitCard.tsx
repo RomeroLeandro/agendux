@@ -26,7 +26,7 @@ export function BenefitCard({
         {title}
       </Typography>
 
-      <Typography variant="body-md" className="mt-2 text-text-secondary">
+      <Typography variant="body-md" className="mt-2">
         {description}
       </Typography>
     </Card>
