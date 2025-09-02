@@ -63,7 +63,8 @@ export const Typography: React.FC<TypographyProps> = ({
     "body-sm":
       " text-sm text-font-secondary-light dark:text-font-secondary-dark",
 
-    caption: " font-semibold text-sm text-blue-600 dark:text-blue-400",
+    caption:
+      " font-semibold text-sm text-blue-primary dark:text-blue-secondary",
     badge:
       "inline-block px-3 py-1 font-semibold text-lg uppercase tracking-wider rounded-full bg-blue-200 dark:bg-white text-blue-800",
   };
