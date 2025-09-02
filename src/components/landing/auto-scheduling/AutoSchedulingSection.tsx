@@ -5,11 +5,15 @@ import { BookingSimulator } from "./BookingSimulator";
 
 export function AutoSchedulingSection() {
   return (
-    <section className="py-16 md:py-24">
+    <section id="autoagenda" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
           <Typography variant="badge">AUTOAGENDAMIENTO</Typography>
-          <Typography variant="heading-lg" as="h2" className="mt-4 font-adineue-bold">
+          <Typography
+            variant="heading-lg"
+            as="h2"
+            className="mt-4 font-adineue-bold"
+          >
             Deja que tus clientes reserven con un link
           </Typography>
           <Typography variant="body-lg" className="mt-4">

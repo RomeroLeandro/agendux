@@ -1,7 +1,7 @@
 export const navLinks = [
   { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#planes", label: "Planes" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#faq", label: "FAQs" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -24,6 +24,6 @@ export const footerLinks = [
   },
   {
     title: "Recursos",
-    links: [{ label: "FAQ", href: "#faq" }],
+    links: [{ label: "FAQs", href: "#faq" }],
   },
 ];
