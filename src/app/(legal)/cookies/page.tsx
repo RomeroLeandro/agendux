@@ -19,7 +19,7 @@ export default function CookiePolicyPage() {
       <h3 className="subtittle-privacity">1. ¿Qué son las Cookies?</h3>
       <p>
         Las cookies son pequeños archivos de texto que se almacenan en tu
-        navegador cuando visitas un sitio web. Funcionan como una "memoria" para
+        navegador cuando visitas un sitio web. Funcionan como una “memoria” para
         el sitio, permitiéndole recordar información importante sobre tu visita,
         como tus preferencias o el estado de tu sesión.
       </p>
