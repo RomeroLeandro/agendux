@@ -17,7 +17,11 @@ export function LegalPageLayout({
     <div className="bg-surface dark:bg-background">
       <div className="container mx-auto max-w-4xl px-4 py-16 md:py-24">
         <header className="text-center">
-          <Typography as="h1" variant="heading-xl">
+          <Typography
+            as="h1"
+            variant="heading-xl"
+            className="text-blue-primary dark:text-blue-primary"
+          >
             {title}
           </Typography>
           <Typography

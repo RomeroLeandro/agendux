@@ -43,6 +43,11 @@ html {
   padding: 1rem; /* p-4 */
 }
 
+.subtittle-privacity {
+  margin-top: 1.5rem; /* mt-6 */
+  color: var(--color-blue-secondary);
+}
+
 @font-face {
   font-family: "adineue PRO";
   src: url("/fonts/adineue-PRO.woff2") format("woff2");

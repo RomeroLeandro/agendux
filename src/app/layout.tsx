@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Provider } from "@/app/provider"; // Asegúrate que la ruta sea correcta
+import { Provider } from "@/app/provider";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +17,11 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark transition-colors duration-300">
-        <Provider>{children}</Provider>
+        <Provider>
+          <Header />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );
