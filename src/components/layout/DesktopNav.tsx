@@ -4,34 +4,40 @@ import Link from "next/link";
 import { navLinks } from "@/config/site";
 import { AuthButtons } from "./AuthButtons";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export function DesktopNav() {
   const pathname = usePathname();
-  const [activeLink, setActiveLink] = useState("#inicio");
-  const isClickScrolling = useRef(false);
+  const [activeLink, setActiveLink] = useState("/#inicio");
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (isClickScrolling.current) return;
-      const sections = navLinks.map((link) =>
-        document.getElementById(link.href.substring(1))
-      );
-      const scrollPosition = window.scrollY + 100;
-      let currentSectionId = "#inicio";
-      for (const section of sections) {
-        if (section && section.offsetTop <= scrollPosition) {
-          currentSectionId = `#${section.id}`;
-        }
+    if (pathname !== "/") {
+      setActiveLink("");
+      return;
+    }
+    setActiveLink("/#inicio");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(`/#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -80% 0px",
       }
-      setActiveLink(currentSectionId);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    );
+
+    const sections = navLinks
+      .map((link) => document.getElementById(link.href.substring(2)))
+      .filter((section): section is HTMLElement => section !== null);
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, [pathname]);
 
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -43,21 +49,14 @@ export function DesktopNav() {
       const section = document.getElementById(sectionId);
 
       if (section) {
-        isClickScrolling.current = true;
         setActiveLink(href);
-
         window.scrollTo({
-          top: section.offsetTop - 80, // Offset por el header
+          top: section.offsetTop - 80,
           behavior: "smooth",
         });
-
-        setTimeout(() => {
-          isClickScrolling.current = false;
-        }, 1000);
       }
     }
   };
-
   return (
     <nav className="hidden flex-grow items-center justify-between lg:flex">
       <div className="flex items-center gap-8 mx-auto">
