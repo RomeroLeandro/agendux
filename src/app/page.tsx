@@ -7,6 +7,7 @@ import { AutoSchedulingSection } from "@/components/landing/auto-scheduling/Auto
 import { FaqSection } from "@/components/landing/faq/FaqSection";
 import { WhatsAppCtaSection } from "@/components/landing/whatsapp-cta/WhatsAppCtaSection";
 import { PricingSection } from "@/components/landing/pricing/PricingSection";
+import { ContactSection } from "@/components/landing/contact/ContactSection";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <PricingSection />
         <FaqSection />
         <WhatsAppCtaSection />
+        <ContactSection />
       </main>
     </>
   );
