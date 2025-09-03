@@ -99,8 +99,11 @@ export default function CookiePolicyPage() {
       <p>
         Si tienes alguna pregunta sobre nuestro uso de cookies, puedes
         contactarnos a través de nuestro
-        <Link href="/#contacto"> formulario de contacto</Link> o escribiéndonos
-        a{" "}
+        <Link href="/#contacto" className="text-blue-secondary">
+          {" "}
+          formulario de contacto
+        </Link>{" "}
+        o escribiéndonos a{" "}
         <a className="text-blue-secondary" href="mailto:agendux.com@gmail.com">
           agendux.com@gmail.com
         </a>

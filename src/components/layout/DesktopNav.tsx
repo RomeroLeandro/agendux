@@ -5,8 +5,10 @@ import { navLinks } from "@/config/site";
 import { AuthButtons } from "./AuthButtons";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function DesktopNav() {
+  const pathname = usePathname();
   const [activeLink, setActiveLink] = useState("#inicio");
   const isClickScrolling = useRef(false);
 
@@ -31,24 +33,28 @@ export function DesktopNav() {
     };
   }, []);
 
-  const handleClick = (
+  const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault();
-    const section = document.getElementById(href.substring(1));
-    if (section) {
-      isClickScrolling.current = true;
-      setActiveLink(href);
+    if (pathname === "/" && href.startsWith("/#")) {
+      e.preventDefault();
+      const sectionId = href.substring(2);
+      const section = document.getElementById(sectionId);
 
-      window.scrollTo({
-        top: section.offsetTop - 80,
-        behavior: "smooth",
-      });
+      if (section) {
+        isClickScrolling.current = true;
+        setActiveLink(href);
 
-      setTimeout(() => {
-        isClickScrolling.current = false;
-      }, 1000);
+        window.scrollTo({
+          top: section.offsetTop - 80, // Offset por el header
+          behavior: "smooth",
+        });
+
+        setTimeout(() => {
+          isClickScrolling.current = false;
+        }, 1000);
+      }
     }
   };
 
@@ -59,7 +65,7 @@ export function DesktopNav() {
           <Link
             key={link.label}
             href={link.href}
-            onClick={(e) => handleClick(e, link.href)}
+            onClick={(e) => handleLinkClick(e, link.href)}
             className={`font-poppins font-semibold transition-colors ${
               activeLink === link.href
                 ? "text-blue-600"
