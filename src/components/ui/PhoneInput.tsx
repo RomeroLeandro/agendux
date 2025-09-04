@@ -22,6 +22,7 @@ export function CustomPhoneInput({
         onChange={onChange}
         defaultCountry="AR"
         {...props}
+        className="text-font-primary-light"
       />
     </div>
   );
