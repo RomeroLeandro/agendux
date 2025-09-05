@@ -11,7 +11,13 @@ export default function MainLayout({
 }) {
   const pathname = usePathname();
 
-  const noLayoutRoutes = ["/login", "/register", "/forgot-password"];
+  const noLayoutRoutes = [
+    "/login",
+    "/register",
+    "/forgot-password",
+    "/auth/error",
+    "/auth/callback",
+  ];
 
   const showLayout = !noLayoutRoutes.includes(pathname);
 

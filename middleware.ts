@@ -1,51 +1,79 @@
-import { updateSession } from "@/lib/supabase/middleware";
+import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
+  let supabaseResponse = NextResponse.next({
+    request,
+  });
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          );
+          supabaseResponse = NextResponse.next({
+            request,
+          });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          );
+        },
+      },
+    }
+  );
+
+  // Verificar la sesión
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   // Rutas públicas que no requieren autenticación
-  const publicRoutes = [
+  const publicPaths = [
     "/",
     "/login",
     "/register",
     "/auth/callback",
     "/auth/error",
     "/auth/forgot-password",
-    "/auth/reset-password",
     "/privacidad",
     "/terminos",
     "/cookies",
   ];
 
-  const isPublicRoute = publicRoutes.some(route => 
-    request.nextUrl.pathname.startsWith(route)
+  const isPublicPath = publicPaths.some((path) =>
+    request.nextUrl.pathname.startsWith(path)
   );
 
-  // Actualizar la sesión de Supabase
-  const response = await updateSession(request);
-
-  // Si es una ruta pública, permitir acceso
-  if (isPublicRoute) {
-    return response;
+  // Si es ruta protegida y no hay usuario, redirigir a login
+  if (!isPublicPath && !user) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = "/login";
+    return NextResponse.redirect(redirectUrl);
   }
 
-  // Para rutas protegidas, verificar autenticación
-  const url = request.nextUrl.clone();
-  
-  // Aquí el middleware de Supabase ya maneja la redirección si no hay usuario
-  // pero podemos agregar lógica adicional si es necesario
-  
-  return response;
+  // Si hay usuario y trata de acceder a login/register, redirigir a dashboard
+  if (
+    user &&
+    (request.nextUrl.pathname === "/login" ||
+      request.nextUrl.pathname === "/register")
+  ) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = "/dashboard";
+    return NextResponse.redirect(redirectUrl);
+  }
+
+  return supabaseResponse;
 }
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public files (images, fonts, etc.)
-     */
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };

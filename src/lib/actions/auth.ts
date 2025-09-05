@@ -80,14 +80,12 @@ export async function signup(formData: FormData) {
 
   if (data?.user) {
     // Crear perfil de usuario en la tabla profiles
-    const { error: profileError } = await supabase
-      .from("profiles")
-      .insert({
-        id: data.user.id,
-        email: data.user.email,
-        full_name: fullName,
-        phone: phone,
-      });
+    const { error: profileError } = await supabase.from("profiles").insert({
+      id: data.user.id,
+      email: data.user.email,
+      full_name: fullName,
+      phone: phone,
+    });
 
     if (profileError) {
       console.error("Error creating profile:", profileError);
@@ -99,7 +97,7 @@ export async function signup(formData: FormData) {
 
 export async function signInWithGoogle() {
   const supabase = await createClient();
-  
+
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
@@ -138,7 +136,10 @@ export async function resetPassword(formData: FormData) {
     return { error: error.message };
   }
 
-  return { success: true, message: "Revisa tu email para resetear tu contraseña" };
+  return {
+    success: true,
+    message: "Revisa tu email para resetear tu contraseña",
+  };
 }
 
 export async function updatePassword(formData: FormData) {
